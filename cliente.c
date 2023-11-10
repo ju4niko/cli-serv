@@ -5,14 +5,6 @@
 #include <arpa/inet.h>
 #include <ctype.h>
 
-int is_numeric(const char *str) {
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (!isdigit(str[i])) {
-            return 0;
-        }
-    }
-    return 1;
-}
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
