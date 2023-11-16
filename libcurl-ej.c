@@ -1,5 +1,17 @@
 #include <stdio.h>
+
+/*
+ * para utilizar la libcurl instalarla para ubuntu:
+ *
+ *   sudo apt-get install libcurl4-openssl-dev 
+ *
+ * y compilar con:
+ *
+ *   gcc -o libcurl-ej libcurl-ej.c -lcurl 
+ *
+ * */
 #include <curl/curl.h>
+
 int main(void) {
     CURL *curl;
     CURLcode res;
