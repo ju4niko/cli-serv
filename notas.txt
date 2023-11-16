@@ -1,3 +1,18 @@
+Para utilizar el microservicio en modo desarrollo invocar directamente al script
+para usarlo en entorno de produccion utilizar gunicorn:
+
+gunicorn -w 2 -b 127.0.0.1:17001 microservicio:application
+
+
+para instalarlo:
+
+$ sudo apt install gunicorn
+
+
+---------------------------------------------
+Ejemplos de uso con postman, netcat y curl
+
+---------------------------------------------
 POST /medicion HTTP/1.1
 Content-Type: application/json
 User-Agent: PostmanRuntime/7.34.0
@@ -12,7 +27,7 @@ Content-Length: 32
     "val1": 5,
     "val2": 1
 }
-
+----------------------------------------
 HTTP/1.1 200 OK
 Server: Werkzeug/3.0.1 Python/3.11.6
 Date: Tue, 14 Nov 2023 12:08:43 GMT
@@ -21,6 +36,8 @@ Content-Length: 4
 Connection: close
 
 FIN
+----------------------------------------
 
 curl -X POST http://127.0.0.1:17001/medicion -H 'Content-Type: application/json' -d '{ "val1": 5, "val2": 1}'
+
 
