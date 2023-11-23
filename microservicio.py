@@ -2,9 +2,9 @@
 from flask import Flask, request
 import math
 
-app = Flask(__name__)
+mi_aplicacion = Flask(__name__)
 
-@app.route('/medicion', methods=['POST'])
+@mi_aplicacion.route('/medicion', methods=['POST'])
 def posicion():
     if request.method == 'POST':
         data = request.get_json()  # Accede a los datos JSON
@@ -16,5 +16,5 @@ def posicion():
     return "FIN\n"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=17001, debug=True)
+    mi_aplicacion.run(host='0.0.0.0',port=17001, debug=True)
 
